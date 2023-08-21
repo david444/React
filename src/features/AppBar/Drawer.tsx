@@ -22,7 +22,7 @@ const Drawer = ({ handleToggle, navItems, isOpen }: DrawerProps) => {
   const content = (
     <Box sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+        Pollo Mojo Dojo House
       </Typography>
       <Divider />
       <List>

@@ -7,7 +7,7 @@ import Drawer from "./Drawer";
 
 const AppBar = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
-  const navItems = ["Home", "About", "Contact"];
+  const navItems = ["Home", "Selector", ""];
 
   const handleOpenMenu = (e: React.MouseEvent<HTMLElement>) => {
     e.stopPropagation();
