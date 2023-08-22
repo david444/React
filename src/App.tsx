@@ -29,14 +29,6 @@ function App() {
     <div>
       {/* Fix overlapping */}
       <RouterProvider router={router} />
-      {/* <Router>
-        <Routes>
-          <Route path="/about" element={<About />} />
-          <Route path="/selector" element={<Selector />} />
-          <Route path="/" element={<MainPage />} />
-          <Route path="/home" element={<MainPage />} />
-        </Routes>
-      </Router> */}
     </div>
   );
 }
