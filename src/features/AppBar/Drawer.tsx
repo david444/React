@@ -8,14 +8,21 @@ import {
   ListItemText,
 } from "@mui/material";
 import DrawerMUI from "@mui/material/Drawer";
+import { useNavigate } from "react-router-dom";
+
+type linkItem = {
+  display: string;
+  route: string;
+};
 
 type DrawerProps = {
   handleToggle: () => void;
   isOpen: boolean;
-  navItems: string[];
+  navItems: linkItem[];
 };
 
 const Drawer = ({ handleToggle, navItems, isOpen }: DrawerProps) => {
+  const navigate = useNavigate();
   const container =
     window !== undefined ? () => window.document.body : undefined;
 
@@ -27,15 +34,19 @@ const Drawer = ({ handleToggle, navItems, isOpen }: DrawerProps) => {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
+          <ListItem key={item.route} disablePadding>
             <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
+              <ListItemText
+                primary={item.display}
+                onClick={() => navigate(`/${item.route}`)}
+              />
             </ListItemButton>
           </ListItem>
         ))}
       </List>
     </Box>
   );
+
   return (
     <Box>
       <DrawerMUI
