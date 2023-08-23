@@ -87,49 +87,52 @@ const Select = ({ multiple, value, onChange, options }: SelectProps) => {
   }, [isOpen, highlightedIndex, options]);
 
   return (
-    <div
-      onBlur={() => setIsOpen(false)}
-      tabIndex={0}
-      className={styles.container}
-      onClick={() => setIsOpen((prev) => !prev)}
-      ref={containerRef}
-    >
-      <span className={styles.value}>
-        {multiple
-          ? value.map((v) => (
-              <button
-                className={styles["option-badge"]}
-                key={v.value}
-                onClick={(e) => {
-                  selectOption(v, e);
-                }}
-              >
-                {v.label}
-                <span className={styles["remove-btn"]}>&times;</span>
-              </button>
-            ))
-          : value?.label}
-      </span>
-      <button onClick={clearOptions} className={styles["clear-btn"]}>
-        &times;
-      </button>
-      <div className={styles.divider}></div>
-      <div className={styles.caret}></div>
-      <ul className={`${styles.options} ${isOpen ? styles.show : ""}`}>
-        {options.map((option, index) => (
-          <li
-            onMouseEnter={() => setHighlightedIndex(index)}
-            onClick={(e) => selectOption(option, e)}
-            className={`${styles.option} ${
-              isOptionSelected(option) ? styles.selected : ""
-            } ${index === highlightedIndex ? styles.highlighted : ""}`}
-            key={option.value}
-          >
-            {option.label}
-          </li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <div>temp</div>
+      <div
+        onBlur={() => setIsOpen(false)}
+        tabIndex={0}
+        className={styles.container}
+        onClick={() => setIsOpen((prev) => !prev)}
+        ref={containerRef}
+      >
+        <span className={styles.value}>
+          {multiple
+            ? value.map((v) => (
+                <button
+                  className={styles["option-badge"]}
+                  key={v.value}
+                  onClick={(e) => {
+                    selectOption(v, e);
+                  }}
+                >
+                  {v.label}
+                  <span className={styles["remove-btn"]}>&times;</span>
+                </button>
+              ))
+            : value?.label}
+        </span>
+        <button onClick={clearOptions} className={styles["clear-btn"]}>
+          &times;
+        </button>
+        <div className={styles.divider}></div>
+        <div className={styles.caret}></div>
+        <ul className={`${styles.options} ${isOpen ? styles.show : ""}`}>
+          {options.map((option, index) => (
+            <li
+              onMouseEnter={() => setHighlightedIndex(index)}
+              onClick={(e) => selectOption(option, e)}
+              className={`${styles.option} ${
+                isOptionSelected(option) ? styles.selected : ""
+              } ${index === highlightedIndex ? styles.highlighted : ""}`}
+              key={option.value}
+            >
+              {option.label}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 };
 

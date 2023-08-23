@@ -1,33 +1,15 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import AppBar from "./features/AppBar/AppBar";
-import Selector from "./pages/Selectors";
-import MainPage from "./pages/MainPage";
-import About from "./pages/About";
+import Shell from "./features/Shell/Shell";
 
 function App() {
   const router = createBrowserRouter([
     {
-      element: <AppBar />,
-      children: [
-        {
-          element: <MainPage />,
-          path: "/",
-        },
-        {
-          element: <Selector />,
-          path: "/selector",
-        },
-        {
-          element: <About />,
-          path: "/about",
-        },
-      ],
-      errorElement: <MainPage />,
+      element: <Shell />,
+      errorElement: <Shell />,
     },
   ]);
   return (
     <div>
-      {/* Fix overlapping */}
       <RouterProvider router={router} />
     </div>
   );
