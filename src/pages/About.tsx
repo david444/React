@@ -1,5 +1,6 @@
+import { Container } from "@mantine/core";
 const About = () => {
-  return <div>About me</div>;
+  return <Container>About me</Container>;
 };
 
 export default About;
