@@ -1,8 +1,8 @@
-import { AppShell, Container } from "@mantine/core";
+import { AppShell } from "@mantine/core";
 import AppNavigation from "./AppNavigation/AppNavigation";
 import { useState } from "react";
 import AppHeader from "./AppHeader/AppHeader";
-import AppContent from "./AppContent/AppContent";
+import { Outlet } from "react-router-dom";
 
 const Shell = () => {
   const [opened, setOpened] = useState(false);
@@ -29,7 +29,8 @@ const Shell = () => {
         navbar={<AppNavigation opened={opened} />}
         header={<AppHeader isOpen={opened} changeOpen={handleOpenMenu} />}
       >
-        <AppContent />
+        {/* <Outlet /> content from the router navigation */}
+        <Outlet />
       </AppShell>
     </AppShell>
   );
