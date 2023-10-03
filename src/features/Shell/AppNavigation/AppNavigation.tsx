@@ -7,6 +7,7 @@ type AppNavigationProps = {
 const AppNavigation = ({ opened }: AppNavigationProps) => {
   const navItems = [
     { label: "Home", link: "" },
+    { label: "Registration Form", link: "" },
     { label: "Selector", link: "selector" },
     { label: "About", link: "about" },
   ];
@@ -18,10 +19,10 @@ const AppNavigation = ({ opened }: AppNavigationProps) => {
       p="md"
       hiddenBreakpoint="sm"
       hidden={!opened}
-      width={{ sm: 150 }}
+      width={{ sm: 200 }}
       style={{ width: 150 }}
     >
-      <Navbar.Section p="lg">
+      <Navbar.Section p="md">
         <div>
           {navItems.map((item) => (
             <Button
